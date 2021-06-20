@@ -1,7 +1,7 @@
 # daily-planner
 
 ## Description
- A simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+ A simple calendar application that allows a user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by javaScript and jQuery.
 
 ### User Story
 **AS AN** employee with a busy schedule<br>
@@ -30,9 +30,9 @@ THEN the text for that event is saved in local storage
 THEN the saved events persist
 
 ### Mock-up
-The following picture shows the website appearance:
+The following picture shows the website appearance and capabilities:
 
-![Website Mock-Up](PLACEHOLDER)
+![Website Mock-Up](./assets/images/website-mockup.gif)
 
 ## Installation
 To fork this code to further improve the website, please follow these directions:
@@ -42,8 +42,10 @@ To fork this code to further improve the website, please follow these directions
 
 _This assumes that you have setup your own SSH keys to connect with Github._
 ## Usage
-You can access the website [here](PLACEHOLDER).
+You can access the website [here](https://avidrunner87.github.io/daily-planner/).
 
 ## References
 [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)<br>
 [W3 Schools](https://www.w3schools.com/)<br>
+[jQuery](https://jquery.com)<br>
+[jQueryUI](https://jqueryui.com)

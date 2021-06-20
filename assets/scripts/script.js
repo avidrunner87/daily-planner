@@ -175,6 +175,6 @@ document.querySelector("#helpDialogOpen").addEventListener("click", function(eve
 
     $("#helpDialogBox").dialog({
         modal: true,
-        minWidth: 450
+        minWidth: 350
     });
 })

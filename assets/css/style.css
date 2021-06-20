@@ -23,6 +23,16 @@ body {
   border-radius: 15px;
 }
 
+#helpDialogOpen {
+  position: absolute;
+  left: calc(100vw - 40px);
+  top: 20px;
+  border: none;
+  background-color: transparent;
+  padding: 2px;
+  font-size: 20px;
+}
+
 /* Formatting for the main content */
 .row {
   white-space: pre-wrap;
@@ -61,4 +71,8 @@ body {
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+}
+
+.helpTitle {
+  font-weight: bold;
 }

@@ -106,10 +106,9 @@ function renderPlannerContent() {
 init();
 
 // ------------- Event Listeners -------------
-document.addEventListener("click", function(event) {
+document.querySelector(".container").addEventListener("click", function(event) {
     if (event.target.matches("button") === true || event.target.parentNode.matches("button") === true) {
         const id = event.target.id || event.target.parentNode.id;
-        console.log(id);
         // Get planner items from local storage
         let plannerItems = JSON.parse(localStorage.getItem("dailyPersonalPlanner_plannerItems-" + moment().format("YYYY-MM-DD")));
         if (plannerItems === null) {
@@ -131,11 +130,11 @@ document.addEventListener("click", function(event) {
         if (validateItem.length === 0 && newEntry.itemInput.length > 0) {
             // Does not exist in array so add
             plannerItems.push(newEntry);
-        } else if (newEntry.itemInput.length > 0) {
+        } else if (newEntry.itemInput.length > 0 && itemIndex != -1) {
             // Does exist in the array so delete and add
             plannerItems.splice(itemIndex, 1);
             plannerItems.push(newEntry);
-        } else {
+        } else if (itemIndex != -1){
             // Delete entry in the array
             plannerItems.splice(itemIndex, 1);
         }
@@ -143,4 +142,39 @@ document.addEventListener("click", function(event) {
         // Store changes back to local storage
         localStorage.setItem("dailyPersonalPlanner_plannerItems-" + moment().format("YYYY-MM-DD"), JSON.stringify(plannerItems));
     }
+})
+
+document.querySelector("#helpDialogOpen").addEventListener("click", function(event) {
+    // Build the help dialog box
+    let $helpDialogDiv = $("<div>");
+    $helpDialogDiv.attr("id", "helpDialogBox");
+    $helpDialogDiv.attr("title", "How to Use the App");
+
+    // Build the help dialog overview
+    let $helpOverviewP = $("<p>");
+    $helpOverviewP.text("Below you will find a few details on how to use the app:");
+    $helpDialogDiv.append($helpOverviewP);
+
+    // Build the Add Content
+    let $helpAddP = $("<p>");
+    $helpAddP.html("<span class=\"helpTitle\">Add Content</span> - Type the details on the line and click the save button.");
+    $helpDialogDiv.append($helpAddP);
+
+    // Build the Change Content
+    let $helpChangeP = $("<p>");
+    $helpChangeP.html("<span class=\"helpTitle\">Change Content</span> - Update the details on the line and click the save button.");
+    $helpDialogDiv.append($helpChangeP);
+
+    // Build the Delete Content
+    let $helpDeleteP = $("<p>");
+    $helpDeleteP.html("<span class=\"helpTitle\">Delete Content</span> - Delete all the details on the line and click the save button.");
+    $helpDialogDiv.append($helpDeleteP);
+
+    // Append the row to the main container
+    $(".container").append($helpDialogDiv);
+
+    $("#helpDialogBox").dialog({
+        modal: true,
+        minWidth: 450
+    });
 })

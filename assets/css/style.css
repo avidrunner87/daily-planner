@@ -76,3 +76,11 @@ body {
 .helpTitle {
   font-weight: bold;
 }
+
+@media only screen and (max-width: 575px) {
+  .saveBtn {
+    border-top-right-radius: unset;
+    border-bottom-right-radius: unset;
+    height: 40px;
+  }
+}

@@ -178,3 +178,4 @@ document.querySelector("#helpDialogOpen").addEventListener("click", function(eve
         minWidth: 350
     });
 })
+

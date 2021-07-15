@@ -3,7 +3,7 @@ let plannerDateTime;
 
 // Using a 24 hour clock (0-23), define the default range for the planner
 let plannerStartTime = 7;
-let plannerEndTime = 18;
+let plannerEndTime = 20;
 
 // ---------------- Functions ----------------
 // Run on web page load
